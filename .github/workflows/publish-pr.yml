@@ -16,4 +16,4 @@ jobs:
         with:
           github-push-secret: ${{secrets.GITHUB_TOKEN}}
           docker-image-name: 'coa'
-          docker-image-tag: ${{env.GITHUB_SHA}}
+          docker-image-tag: ${{GITHUB_SHA}}
