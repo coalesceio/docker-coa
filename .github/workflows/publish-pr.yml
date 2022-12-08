@@ -17,3 +17,6 @@ jobs:
           github-push-secret: ${{secrets.GITHUB_TOKEN}}
           docker-image-name: 'coa'
           docker-image-tag: ${{github.sha}}
+
+      - name: Test Docker image
+        run: docker run coa:${{github.sha}} --help

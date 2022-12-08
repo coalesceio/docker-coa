@@ -20,3 +20,6 @@ jobs:
           github-push-secret: ${{secrets.GITHUB_TOKEN}}
           docker-image-name: 'coa'
           docker-image-tag: latest
+      
+      - name: Test Docker image
+        run: docker run coa:latest --help
