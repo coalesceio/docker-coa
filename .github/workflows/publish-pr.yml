@@ -19,4 +19,4 @@ jobs:
           docker-image-tag: ${{github.sha}}
 
       - name: Test Docker image
-        run: docker run coa:${{github.sha}} --help
+        run: docker run ghcr.io/coalesceio/coa:${{github.sha}} --help
