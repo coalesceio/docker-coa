@@ -1,0 +1,22 @@
+name: Publish to GitHub Container Registry
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [ closed ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout repository
+
+      - name: Build and push Docker image
+        uses: pmorelli92/github-container-registry-build-push@2.0.0
+        with:
+          github-push-secret: ${{secrets.GITHUB_TOKEN}}
+          docker-image-name: 'coa'
+          docker-image-tag: latest
