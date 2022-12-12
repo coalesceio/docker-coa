@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM node:19-alpine3.15
+FROM node:18
 
 RUN npm install -g @coalescesoftware/coa
 
